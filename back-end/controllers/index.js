@@ -28,7 +28,7 @@ async function getPokemon(req, res) {
         const response = await axios.get(`${url}/${req.params.name}`)
         res.json(response.data)
     } catch (err) {
-        console.log(err)
+        res.send(null)
     }
 
 }

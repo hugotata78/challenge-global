@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { alpha, makeStyles } from '@material-ui/core/styles';
 import SearchIcon from '@material-ui/icons/Search';
-import { getPokemon } from '../../redux/actions/actionPokemon';
+import { getPokemon, searchPokemon } from '../../redux/actions/actionPokemon';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -77,8 +77,8 @@ const Forms = () => {
   )
 
   const onSearch = (query) => {
-    history.push(`/pokemon/${query}`)
-    dispatch(getPokemon(query))
+    history.push(`/search/${query}`)
+    dispatch(searchPokemon(query))
 
   }
 
